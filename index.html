@@ -1424,6 +1424,8 @@
         
         <div class="filters" id="filters">
             <button class="filter-btn active" data-filter="all" data-fr="Tout" data-en="All" data-ru="Все" data-ur="سب" data-es="Todo" data-it="Tutto">Tout</button>
+            <button class="filter-btn" data-filter="france" data-fr="France 🇫🇷" data-en="France 🇫🇷" data-ru="Франция 🇫🇷" data-ur="فرانس 🇫🇷" data-es="Francia 🇫🇷" data-it="Francia 🇫🇷">France 🇫🇷</button>
+            <button class="filter-btn" data-filter="uk" data-fr="UK 🇬🇧" data-en="UK 🇬🇧" data-ru="Великобритания 🇬🇧" data-ur="برطانیہ 🇬🇧" data-es="Reino Unido 🇬🇧" data-it="Regno Unito 🇬🇧">UK 🇬🇧</button>
             <button class="filter-btn" data-filter="montres" data-fr="Montres" data-en="Watches" data-ru="Часы" data-ur="گھڑیاں" data-es="Relojes" data-it="Orologi">Montres</button>
             <button class="filter-btn" data-filter="maroquinerie" data-fr="Maroquinerie" data-en="Leather" data-ru="Кожа" data-ur="چمڑا" data-es="Cuero" data-it="Pelle">Maroquinerie</button>
             <button class="filter-btn" data-filter="meubles" data-fr="Meubles" data-en="Furniture" data-ru="Мебель" data-ur="فرنیچر" data-es="Muebles" data-it="Mobili">Meubles</button>
@@ -1570,18 +1572,18 @@
 
         // Products Data
         const products = [
-            { id: 1, name: "Chronographe Parisien", price: 1250, category: "montres", origin: "🇫🇷", img: "https://images.unsplash.com/photo-1524592094714-0f0654ece975?w=500&q=80" },
-            { id: 2, name: "London Heritage Watch", price: 1800, category: "montres", origin: "🇬🇧", img: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=500&q=80" },
-            { id: 3, name: "Sac à Main Vendôme", price: 850, category: "maroquinerie", origin: "🇫🇷", img: "https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=500&q=80" },
-            { id: 4, name: "Oxford Leather Briefcase", price: 620, category: "maroquinerie", origin: "🇬🇧", img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80" },
-            { id: 5, name: "Fauteuil Haussmann", price: 1400, category: "meubles", origin: "🇫🇷", img: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=500&q=80" },
-            { id: 6, name: "Chesterfield Sofa", price: 2200, category: "meubles", origin: "🇬🇧", img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80" },
-            { id: 7, name: "Vase Louvre", price: 180, category: "decor", origin: "🇫🇷", img: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=500&q=80" },
-            { id: 8, name: "Chelsea Table Lamp", price: 240, category: "decor", origin: "🇬🇧", img: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&q=80" },
-            { id: 9, name: "Montre Squelette Or", price: 3500, category: "montres", origin: "🇫🇷", img: "https://images.unsplash.com/photo-1548171915-e76a380ebbf3?w=500&q=80" },
-            { id: 10, name: "Portefeuille Mayfair", price: 150, category: "maroquinerie", origin: "🇬🇧", img: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&q=80" },
-            { id: 11, name: "Table Basse Bordeaux", price: 790, category: "meubles", origin: "🇫🇷", img: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=500&q=80" },
-            { id: 12, name: "Kensington Mirror", price: 450, category: "decor", origin: "🇬🇧", img: "https://images.unsplash.com/photo-1618220179428-22790b461013?w=500&q=80" }
+            { id: 1, name: "Louis Vuitton Speedy 30", price: 850, category: "maroquinerie", origin: "🇫🇷", source: "Vinted", country: "france", link: "https://www.vinted.fr/catalog?search_text=louis+vuitton+speedy", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500&q=80" },
+            { id: 2, name: "Burberry Trench Coat", price: 420, category: "maroquinerie", origin: "🇬🇧", source: "TK Maxx", country: "uk", link: "https://www.tkmaxx.com/uk/en/search?q=burberry+trench", img: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500&q=80" },
+            { id: 3, name: "Rolex Submariner", price: 8500, category: "montres", origin: "🇫🇷", source: "Leboncoin", country: "france", link: "https://www.leboncoin.fr/recherche?text=rolex+submariner", img: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=500&q=80" },
+            { id: 4, name: "Gucci Sunglasses", price: 180, category: "maroquinerie", origin: "🇬🇧", source: "TK Maxx", country: "uk", link: "https://www.tkmaxx.com/uk/en/search?q=gucci+sunglasses", img: "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&q=80" },
+            { id: 5, name: "Chanel Timeless", price: 4200, category: "maroquinerie", origin: "🇬🇧", source: "Vinted UK", country: "uk", link: "https://www.vinted.co.uk/catalog?search_text=chanel+timeless", img: "https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=500&q=80" },
+            { id: 6, name: "Carré Hermès Soie", price: 250, category: "maroquinerie", origin: "🇫🇷", source: "Vinted FR", country: "france", link: "https://www.vinted.fr/catalog?search_text=carre+hermes", img: "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=500&q=80" },
+            { id: 7, name: "Cartier Tank", price: 2100, category: "montres", origin: "🇬🇧", source: "Vinted UK", country: "uk", link: "https://www.vinted.co.uk/catalog?search_text=cartier+tank", img: "https://images.unsplash.com/photo-1548171915-e76a380ebbf3?w=500&q=80" },
+            { id: 8, name: "Vase Baccarat", price: 340, category: "decor", origin: "🇫🇷", source: "Leboncoin", country: "france", link: "https://www.leboncoin.fr/recherche?text=vase+baccarat", img: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=500&q=80" },
+            { id: 9, name: "Dior Saddle Bag", price: 1950, category: "maroquinerie", origin: "🇫🇷", source: "Vinted FR", country: "france", link: "https://www.vinted.fr/catalog?search_text=dior+saddle", img: "https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500&q=80" },
+            { id: 10, name: "Vivienne Westwood", price: 120, category: "maroquinerie", origin: "🇬🇧", source: "Oxfam", country: "uk", link: "https://onlineshop.oxfam.org.uk/search?q=vivienne+westwood", img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&q=80" },
+            { id: 11, name: "Prada Loafers", price: 380, category: "maroquinerie", origin: "🇬🇧", source: "Vinted UK", country: "uk", link: "https://www.vinted.co.uk/catalog?search_text=prada+loafers", img: "https://images.unsplash.com/photo-1608667508764-33cf0726b13a?w=500&q=80" },
+            { id: 12, name: "Omega Speedmaster", price: 4500, category: "montres", origin: "🇫🇷", source: "Leboncoin", country: "france", link: "https://www.leboncoin.fr/recherche?text=omega+speedmaster", img: "https://images.unsplash.com/photo-1524592094714-0f0654ece975?w=500&q=80" }
         ];
 
         // Format Currency
@@ -1593,7 +1595,9 @@
             const grid = document.getElementById('products-grid');
             grid.innerHTML = '';
             
-            const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+            const filtered = filter === 'all' 
+                ? products 
+                : products.filter(p => p.category === filter || p.country === filter);
             
             filtered.forEach(product => {
                 const card = document.createElement('div');
@@ -1601,7 +1605,7 @@
                 card.innerHTML = `
                     <div class="product-img-wrapper">
                         <img src="${product.img}" alt="${product.name}" class="product-img" loading="lazy">
-                        <span class="product-origin">${product.origin}</span>
+                        <span class="product-origin">${product.origin} ${product.source}</span>
                     </div>
                     <div class="product-info">
                         <h4 class="product-name">${product.name}</h4>
@@ -1609,11 +1613,17 @@
                             <span>${formatEur(product.price)}</span>
                             <span class="price-gbp">${formatGbp(product.price)}</span>
                         </div>
-                        <button class="btn-add" onclick="addToCart(${product.id})">${translations.add_cart[currentLang]}</button>
+                        <div style="display: flex; gap: 10px; margin-top: 1rem;">
+                            <button class="btn-add" style="flex: 1;" onclick="addToCart(${product.id})">${translations.add_cart[currentLang]}</button>
+                            <a href="${product.link}" target="_blank" class="btn-outline" style="padding: 10px 15px; border-radius: var(--radius-sm); border: 1px solid var(--c-gold); color: var(--c-gold); display: flex; align-items: center; justify-content: center; text-decoration: none;" title="Voir sur ${product.source}">
+                                <i data-lucide="external-link" size="18"></i>
+                            </a>
+                        </div>
                     </div>
                 `;
                 grid.appendChild(card);
             });
+            lucide.createIcons();
         }
 
         // Filters Setup
@@ -1841,13 +1851,3 @@
             e.target.reset();
             showModal(
                 translations.sub_conf[currentLang],
-                translations.sub_msg[currentLang]
-            );
-        });
-
-        // Init
-        renderProducts();
-        updateCartUI();
-    </script>
-</body>
-</html>
